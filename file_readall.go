@@ -14,6 +14,7 @@ func main() {
 	}
 	filename := os.Args[1]
 	fh, err := os.Open(filename)
+	defer fh.Close()
 	if err != nil {
 		log.Panicf("can't open file %s", filename)
 	}
